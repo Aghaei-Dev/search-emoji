@@ -1,0 +1,234 @@
+/*
+=============== 
+Variables
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 91%, 17%);
+  --clr-primary-2: hsl(205, 84%, 25%);
+  --clr-primary-3: hsl(205, 81%, 29%);
+  --clr-primary-4: hsl(205, 77%, 34%);
+  --clr-primary-5: hsl(205, 62%, 45%);
+  --clr-primary-6: hsl(205, 57%, 50%);
+  --clr-primary-7: hsl(205, 65%, 59%);
+  --clr-primary-8: hsl(205, 80%, 74%);
+  --clr-primary-9: hsl(205, 94%, 87%);
+  --clr-primary-10: hsl(205, 100%, 94%);
+
+  /* dark shades of primary color*/
+  --clr-silver-1: hsl(0, 0%, 17%);
+  --clr-silver-2: hsl(0, 0%, 25%);
+  --clr-silver-3: hsl(0, 0%, 29%);
+  --clr-silver-4: hsl(0, 0%, 34%);
+  --clr-silver-5: hsl(0, 0%, 45%);
+  --clr-silver-6: hsl(0, 0%, 50%);
+  --clr-silver-7: hsl(0, 0%, 59%);
+  --clr-silver-8: hsl(0, 0%, 74%);
+  --clr-silver-9: hsl(0, 0%, 87%);
+  --clr-silver-10: hsl(0, 0%, 94%);
+
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inconsolata', monospace;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section-center {
+  width: 90vw;
+  margin: 2rem auto;
+  max-width: var(--max-width);
+  text-align: center;
+  background: var(--clr-white);
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  position: relative;
+}
+.section-center:hover {
+  box-shadow: var(--dark-shadow);
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+/*
+=============== 
+Emoji Search
+===============
+*/
+.under-line {
+  margin: 0 auto;
+  width: 20%;
+  height: 3px;
+  background: var(--clr-primary-6);
+  border-radius: var(--radius);
+}
+.emoji-search {
+  padding: 0.25rem;
+  padding-left: 1rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  border-color: transparent;
+  font-size: 1rem;
+  flex: 1 0 auto;
+  color: var(--clr-grey-5);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+.emoji-search::placeholder {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-5);
+}
+.emoji-search:focus {
+  border: 2px solid var(--clr-primary-5);
+}
+.list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 14px;
+}
+.single-emoji {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+}
+.single-emoji:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.1);
+}
+.single-emoji span {
+  font-size: 3rem;
+}
+.category {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.category:hover {
+  background: var(--clr-grey-10);
+}
+.selected {
+  background: var(--clr-primary-10);
+}
+@media (width>= 992px) {
+  .category {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+}
+.copied {
+  background: #222;
+}
