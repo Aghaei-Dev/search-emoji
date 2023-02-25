@@ -1,5 +1,4 @@
-# react-projects-7-slider
+react project 
 
-#### IN ACTION
-
-[Gatsby-Airtable Project](https://gatsby-airtable-design-project.netlify.app/)
+search emoji 
+with category
