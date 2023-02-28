@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SingleEmoji from '../SingleEmoji/SingleEmoji'
 import data from '../Data/emojis.json'
+import { Button, TextField } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 
 const List = () => {
@@ -48,27 +49,29 @@ const List = () => {
   return (
     <>
       <section className='search'>
-        <input
+        <TextField
+          size='small'
+          className='input'
+          label='Search 🔎'
+          variant='outlined'
           onChange={(e) => {
             setSearchValue(e.target.value)
           }}
           value={searchValue}
-          type='text'
-          className='emoji-search'
-          placeholder='Search 🔎'
         />
       </section>
       {!searchValue &&
         categoryArray.map((item, index) => {
           return (
-            <button
+            <Button
+              variant='text'
               key={index}
               className={`category ${item === category && 'selected'}`}
               onClick={(e) => {
                 setCategory(e.target.textContent)
               }}>
               {item}
-            </button>
+            </Button>
           )
         })}
       <div className='list'>
